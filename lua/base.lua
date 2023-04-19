@@ -25,7 +25,7 @@ vim.opt.backspace = { 'start', 'eol', 'indent' }
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
 vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.tabline = '%!v:lua.require\'luatab\'.tabline()'
-
+vim.opt.swapfile = false
 vim.o.number = true
 vim.o.hlsearch = true
 -- Indentation settings
