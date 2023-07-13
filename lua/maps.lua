@@ -17,6 +17,7 @@ vim.api.nvim_set_keymap('n', '<Leader>7', '7gt', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader>8', '8gt', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader>9', '9gt', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Leader>0', ':tablast<cr>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<c-P>', '<cmd>lua require("fzf-lua").live_grep()<CR>', { noremap = true })
 
 -- Moving lines
 vim.api.nvim_set_keymap('n', '<A-k>', ':m .-2<CR>==', {noremap = true})
