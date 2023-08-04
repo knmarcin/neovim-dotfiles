@@ -4,6 +4,12 @@ vim.scriptencoding = 'utf-8'
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
 
+
+vim.o.listchars = "tab:| "
+vim.wo.list = true
+
+vim.o.termguicolors = true
+
 vim.wo.number = true
 
 vim.opt.title = true
