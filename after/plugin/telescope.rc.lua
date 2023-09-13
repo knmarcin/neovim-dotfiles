@@ -12,6 +12,9 @@ local fb_actions = require "telescope".extensions.file_browser.actions
 telescope.setup {
   defaults = {
     layout_strategy = 'vertical',
+    layout_config = {
+      preview_height = 0.7,
+    },
     mappings = {
       n = {
         ["q"] = actions.close
