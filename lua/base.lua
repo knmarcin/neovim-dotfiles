@@ -11,7 +11,7 @@ vim.wo.list = true
 vim.o.termguicolors = true
 
 vim.wo.number = true
-
+vim.cmd "autocmd User TelescopePreviewerLoaded setlocal number"
 vim.opt.title = true
 vim.opt.smartindent = true
 vim.opt.hlsearch = true
