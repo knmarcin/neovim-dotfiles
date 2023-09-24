@@ -12,9 +12,9 @@ local fb_actions = require "telescope".extensions.file_browser.actions
 telescope.setup {
   defaults = {
     layout_strategy = 'vertical',
-    layout_config = {
-      preview_height = 0.7,
-    },
+    -- layout_config = {
+    --   preview_height = 0.7,
+    -- },
     mappings = {
       n = {
         ["q"] = actions.close
@@ -85,8 +85,7 @@ vim.keymap.set("n", "sf", function()
     respect_gitignore = false,
     hidden = true,
     grouped = true,
-    previewer = false,
+    previewer = true,
     initial_mode = "normal",
-    layout_config = { height = 40 }
   })
 end)
