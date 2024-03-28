@@ -32,6 +32,13 @@ vim.api.nvim_set_keymap('n', '<A-j>', ':m .+1<CR>==', { noremap = true })
 vim.api.nvim_set_keymap('v', '<A-k>', ':m \'<-2<CR>gv=gv', { noremap = true })
 
 vim.api.nvim_set_keymap('n', '<C-t>', ':tabnew<CR>', { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>rt', ':%s/    /\t/g<cr>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<leader>rt', ':s/    /\t/g<cr>', {noremap = true, silent = true})
 
 -- Key mappings
 vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {})
+vim.api.nvim_set_keymap('n', '<leader>vi', ':e ~/.config/nvim/init.lua<CR>', {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('n', '<C-Left>', ':vertical resize -2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-Right>', ':vertical resize +2<CR>', { noremap = true, silent = true })
+
