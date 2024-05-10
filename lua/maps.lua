@@ -42,3 +42,20 @@ vim.api.nvim_set_keymap('n', '<leader>vi', ':e ~/.config/nvim/init.lua<CR>', {no
 vim.api.nvim_set_keymap('n', '<C-Left>', ':vertical resize -2<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-Right>', ':vertical resize +2<CR>', { noremap = true, silent = true })
 
+-- Define a function to fetch git log containing 'ref' and insert it
+vim.api.nvim_create_user_command('Ref', function()
+    -- Execute shell command and get the output
+    local handle = io.popen("git log | grep ref | head -1")
+    local result = handle:read("*a")
+    handle:close()
+
+    -- Trim leading spaces from the result
+    local trimmed_result = result:match("^%s*(.-)%s*$")
+
+    -- Insert the trimmed result into the current line at the cursor position
+    local line = vim.api.nvim_get_current_line()
+    local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+    local new_line = line:sub(1, col - 1) .. trimmed_result .. line:sub(col)
+    vim.api.nvim_set_current_line(new_line)
+end, { nargs = 0 })
+
