@@ -45,7 +45,7 @@ vim.api.nvim_set_keymap('n', '<C-Right>', ':vertical resize +2<CR>', { noremap =
 -- Define a function to fetch git log containing 'ref' and insert it
 vim.api.nvim_create_user_command('Ref', function()
     -- Execute shell command and get the output
-    local handle = io.popen("git log | grep ref | head -1")
+    local handle = io.popen("git log | grep 'ref T' | head -1")
     local result = handle:read("*a")
     handle:close()
 
