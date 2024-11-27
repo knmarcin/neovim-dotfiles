@@ -6,10 +6,10 @@ ts.setup {
     enable = true,
     disable = {},
   },
-  indent = {
-    enable = true,
-    disable = {},
-  },
+  -- indent = {
+  --   enable = true,
+  --   disable = {},
+  -- },
   ensure_installed = {
     "markdown",
     "markdown_inline",
