@@ -3,16 +3,9 @@ if (not status) then
     print("Packer is not installed")
     return
 end
-
 vim.cmd [[packadd packer.nvim]]
-
 packer.startup(function(use)
     use 'wbthomason/packer.nvim'
-    -- use {
-    --   'svrana/neosolarized.nvim',
-    --   requires = { 'tjdevries/colorbuddy.nvim' }
-    -- }
-
     use 'nvim-lualine/lualine.nvim' -- Statusline
     use 'nvim-lua/plenary.nvim'     -- Common utilities
     use 'onsails/lspkind-nvim'      -- vscode-like pictograms
@@ -22,7 +15,7 @@ packer.startup(function(use)
     use { "junegunn/fzf", run = "./install --bin" }
     use "ibhagwan/fzf-lua"
     use 'neovim/nvim-lspconfig'           -- LSP
-    use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+    -- use 'jose-elias-alvarez/null-ls.nvim' -- REMOVED - deprecated
     use 'williamboman/mason.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'williamboman/mason-lspconfig.nvim'
@@ -34,9 +27,8 @@ packer.startup(function(use)
         branch = "v3.x",
         requires = {
             "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons",     -- not strictly required, but recommended
+            "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
-            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         }
     }
     use {
@@ -60,8 +52,6 @@ packer.startup(function(use)
         run = function() vim.fn["mkdp#util#install"]() end,
     })
     use 'akinsho/nvim-bufferline.lua'
-    -- use 'github/copilot.vim'
-
     use {
         'lewis6991/gitsigns.nvim',
         requires = {
@@ -69,4 +59,5 @@ packer.startup(function(use)
         }
     }
     use 'dinhhuy258/git.nvim' -- For git blame & browse
+    use 'stevearc/conform.nvim' -- Formatter
 end)

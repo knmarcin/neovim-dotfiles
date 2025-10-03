@@ -2,7 +2,8 @@ require('base')
 require('highlights')
 require('maps')
 require('plugins')
-
+require('conform-config')
+vim.deprecate = function() end
 local has = vim.fn.has
 local is_mac = has "macunix"
 

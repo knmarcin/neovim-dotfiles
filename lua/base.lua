@@ -36,7 +36,6 @@ vim.o.number = true
 vim.o.hlsearch = true
 -- Indentation settings
 vim.o.autoindent = true
-vim.o.noexpandtab = true
 vim.o.smarttab = true
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
@@ -58,5 +57,5 @@ vim.opt.formatoptions:append { 'r' }
 
 
 -- Filetype-specific settings
-vim.cmd([[autocmd FileType python setlocal autoindent noexpandtab smarttab tabstop=4 shiftwidth=4 preserveindent copyindent softtabstop=0]])
 vim.cmd([[autocmd FileType javascript setlocal autoindent expandtab smarttab tabstop=4 shiftwidth=4 preserveindent copyindent]])
+vim.cmd([[autocmd FileType python setlocal autoindent expandtab smarttab tabstop=4 shiftwidth=4 softtabstop=4]])
